@@ -1,0 +1,52 @@
+﻿@inherits InputBase<string>
+
+@using System.Linq.Expressions
+
+@if (IsTextArea)
+{
+    <textarea class="@Class"
+              @bind="CurrentValueAsString"
+              @bind:event="oninput"
+              maxlength="@MaxLength"
+              disabled="@IsDisabled"
+              placeholder="@Placeholder"></textarea>
+}
+else
+{
+    <input class="@Class"
+           @bind="CurrentValueAsString"
+           @bind:event="oninput"
+           maxlength="@MaxLength"
+           disabled="@IsDisabled"
+           placeholder="@Placeholder" />
+}
+
+<span><ValidationMessage For="ValidationFor" /></span>
+
+@code {
+    [Parameter, EditorRequired] public Expression<Func<string>> ValidationFor { get; set; } = default!;
+    [Parameter, EditorRequired] public Dictionary<string, string> ReplacementsItems { get; set; } = new();
+    [Parameter] public bool IgnoreCase { get; set; } = true;
+    [Parameter] public string Placeholder { get; set; } = "Enter your text";
+    [Parameter] public string Class { get; set; } = "form-control";
+    [Parameter] public int MaxLength { get; set; } = 1000;
+    [Parameter] public bool IsDisabled { get; set; }
+    [Parameter] public bool IsTextArea { get; set; }
+
+    protected override bool TryParseValueFromString(string? value, out string result, out string validationErrorMessage)
+    {
+        var input = value ?? string.Empty;
+
+        foreach (var (key, replacement) in ReplacementsItems)
+        {
+            input = input.Replace(key, replacement, IgnoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal);
+        }
+
+        if (input.Length > MaxLength)
+            input = input.Substring(0, MaxLength);
+
+        result = input;
+        validationErrorMessage = null;
+        return true;
+    }
+}

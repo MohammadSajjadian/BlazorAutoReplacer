@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+		
+		<!-- NuGet package metadata -->
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>MSJD.AutoRewriter</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Mohammad Sajjadian</Authors>
+		<Description>A Blazor component for auto-replacing text in input and textarea with validation support.</Description>
+		<PackageTags>blazor;input;validation;text-replacement;component</PackageTags>
+		<RepositoryUrl>https://github.com/MohammadSajjadian/AutoRewriter</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="wwwroot/brand-logo.png">
+			<Pack>True</Pack>
+			<PackagePath>/</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Forms" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Forms" Version="9.0.0" />
+	</ItemGroup>
+
+</Project>
