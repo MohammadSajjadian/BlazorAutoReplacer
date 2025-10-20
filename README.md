@@ -1,5 +1,9 @@
 # AutoRewriter
 
+[![NuGet Version](https://img.shields.io/nuget/v/MSJD.AutoReplacer.svg?style=flat&logo=nuget)](https://www.nuget.org/packages/MSJD.AutoReplacer)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A Blazor component that automatically replaces words in real-time as the user types, with full support for validation, text area mode, and customization.
 A Blazor component for **automatic text replacement** in `<input>` or `<textarea>` fields with **validation support**. It allows you to replace words on-the-fly while typing, enforce max length, and optionally switch between single-line and multi-line inputs.
 
 ---
