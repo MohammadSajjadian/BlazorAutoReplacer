@@ -2,15 +2,16 @@
 
 	<PropertyGroup>
 		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
-		
+
 		<!-- NuGet package metadata -->
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<PackageId>MSJD.AutoRewriter</PackageId>
+		<PackageId>MSJD.AutoReplacer</PackageId>
 		<Version>1.0.0</Version>
 		<Authors>Mohammad Sajjadian</Authors>
 		<Description>A Blazor component for auto-replacing text in input and textarea with validation support.</Description>
 		<PackageTags>blazor;input;validation;text-replacement;component</PackageTags>
-		<RepositoryUrl>https://github.com/MohammadSajjadian/AutoRewriter</RepositoryUrl>
+		<RepositoryUrl>https://github.com/MohammadSajjadian/AutoReplacer</RepositoryUrl>
+		<PackageIcon>brand-logo.png</PackageIcon>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 
