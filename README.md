@@ -116,6 +116,7 @@ dotnet add package MSJD.AutoRewriter --version 1.0.0
 | `badword` | `goodword` |
 | `oops`    | `ok`      |
 
+See the live demo on: www.mohammadsajjadian.ir/demo/auto-replacer
 ---
 
 ## Notes
