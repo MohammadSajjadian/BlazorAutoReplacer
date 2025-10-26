@@ -24,7 +24,7 @@ A Blazor component for **automatic text replacement** in `<input>` or `<textarea
 Add the NuGet package to your Blazor project:
 
 ```bash
-dotnet add package MSJD.AutoRewriter --version 1.0.0
+dotnet add package MSJD.AutoRewriter --version 1.0.2
 ```
 ## Usage
 
